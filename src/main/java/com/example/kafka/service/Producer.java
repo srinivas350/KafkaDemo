@@ -20,7 +20,6 @@ public class Producer {
 	public String sendMessageToTopic(MultipartFile myFile) throws IOException
 	{
 		context.setAttribute("fileName", myFile.getOriginalFilename());
-		if (!myFile.isEmpty()) {
 	        try {
 	            byte[] bytes = myFile.getBytes();
 	            String completeData = new String(bytes);
@@ -29,12 +28,11 @@ public class Producer {
 	            //send data
 	            template.send(record);
 	            return "Data Sent to Kafka Topic"; 
-	        }
+	      	}
 	        catch(Exception e)
 	        {
 	        	e.printStackTrace();
 	        }
-		}
 		return null;
 	}
 
