@@ -21,7 +21,7 @@ public class DemoController {
 	@Autowired
 	Producer producer;
 	@PostMapping("/uploadFile")
-	public ResponseEntity<String> test(@RequestParam("file") MultipartFile myFile) throws IOException
+	public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile myFile) throws IOException
 	{
 		String response="";
 		try {
